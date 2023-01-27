@@ -12,10 +12,10 @@
         submitted:function(event){
             event.preventDefault();
             let searchinput = event.target.input.value;
-            getData(searchinput).then(data=> this.setState({apiData:data.data},()=> this.helloworld()));
+            getData(searchinput).then(data=> this.setState({apiData:data.data},()=> this.renderCards()));
         },
 
-        helloworld(){
+        renderCards(){
             ReactDOM.render(<Cards gif={this.state.apiData}/>,document.getElementById("view"));
         },
 
